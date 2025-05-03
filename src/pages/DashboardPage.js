@@ -1,5 +1,12 @@
+import EntryForm from '../components/EntryForm';
+
 function DashboardPage() {
-    return <h2>Dashboard Page</h2>;
-  }
-  export default DashboardPage;
-  
+  return (
+    <div>
+      <h2>Dashboard</h2>
+      <EntryForm />
+    </div>
+  );
+}
+
+export default DashboardPage;
