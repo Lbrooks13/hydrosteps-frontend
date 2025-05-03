@@ -1,3 +1,46 @@
+## Features
+
+### ✅ Authentication Features
+- User can **register** with email and password
+- User can **log in** to access their dashboard
+- User can **log out** securely
+
+### ✅ Data Entry Features
+- User can manually enter:
+  - Daily step count
+  - Daily water intake (in ml)
+- Form includes input validation
+- Submitted data is saved to the backend via API
+
+### ✅ Dashboard Features
+- Displays total steps and water intake for today
+- Includes friendly goal reminder (e.g., “Drink 2L” or “10,000 steps”)
+
+### ✅ History Page Features
+- Shows past entries (date, steps, water)
+- Optionally displays simple charts for visual tracking
+
+---
+
+## React Component Structure
+
+
+### Component Descriptions:
+- **App** – Main wrapper holding routes and layout
+- **Navbar** – Header with login/logout/register links
+- **LoginPage/RegisterPage** – User authentication forms
+- **DashboardPage** – Main user screen with input form and today’s stats
+  - `EntryForm` – Steps and water intake form
+  - `TodaySummary` – Shows today’s totals
+- **HistoryPage** – Displays list of all past entries
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
