@@ -7,17 +7,20 @@ function EntryForm({ onEntryAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    const response = await fetch('http://localhost:8000/api/entries/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include', // Sends browser cookies.
-      body: JSON.stringify({
-        step_count: steps,
-        water_intake: water
-      })
-    });
+    const token = localStorage.getItem('token');
+
+      const response = await fetch('http://localhost:8000/api/entries/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Token ${token}`,  // Send token here
+        },
+        body: JSON.stringify({
+          step_count: steps,
+          water_intake: water,
+        }),
+      });
+
   
     if (response.ok) {
       console.log('Entry submitted successfully!');
