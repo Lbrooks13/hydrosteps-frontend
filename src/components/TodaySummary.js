@@ -25,13 +25,17 @@ function TodaySummary({ refreshKey }) {
       });
   }, [refreshKey]);
 
+  const stepTarget = localStorage.getItem('stepTarget');
+  const waterTarget = localStorage.getItem('waterTarget');
+
   return (
     <div className="card p-4 shadow-sm bg-light">
       <h5 className="mb-3">Today's Summary</h5>
-      <p>Steps: <strong>{summary.steps}</strong></p>
-      <p>Water Intake: <strong>{summary.water} ml</strong></p>
+      <p>Steps: <strong>{summary.steps}</strong> / {stepTarget || 'No target set'}</p>
+      <p>Water Intake: <strong>{summary.water}</strong> ml / {waterTarget || 'No target set'} ml</p>
     </div>
   );
+
   
 }
 
