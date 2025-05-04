@@ -6,61 +6,53 @@ function EntryForm({ onEntryAdded }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     const token = localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:8000/api/entries/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Token ${token}`,  // Send token here
-        },
-        body: JSON.stringify({
-          step_count: steps,
-          water_intake: water,
-        }),
-      });
+    const response = await fetch('http://localhost:8000/api/entries/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Token ${token}`,
+      },
+      body: JSON.stringify({
+        step_count: steps,
+        water_intake: water,
+      }),
+    });
 
-  
     if (response.ok) {
-      console.log('Entry submitted successfully!');
       setSteps('');
       setWater('');
-      if (onEntryAdded) {
-        onEntryAdded(); // Tell parent to refresh the summary
-      }
+      if (onEntryAdded) onEntryAdded();
+    } else {
+      console.error('Failed to submit entry');
     }
-    
   };
-  
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="card p-4 shadow-sm mb-4">
+      <h4 className="mb-3">Log Today’s Activity</h4>
       <div className="mb-3">
-        <label htmlFor="steps" className="form-label">Step Count</label>
+        <label className="form-label">Step Count</label>
         <input
           type="number"
           className="form-control"
-          id="steps"
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
           required
         />
       </div>
-
       <div className="mb-3">
-        <label htmlFor="water" className="form-label">Water Intake (ml)</label>
+        <label className="form-label">Water Intake (ml)</label>
         <input
           type="number"
           className="form-control"
-          id="water"
           value={water}
           onChange={(e) => setWater(e.target.value)}
           required
         />
       </div>
-
-      <button type="submit" className="btn btn-primary">Add Entry</button>
+      <button type="submit" className="btn btn-primary w-100">Add Entry</button>
     </form>
   );
 }

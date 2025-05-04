@@ -26,12 +26,13 @@ function TodaySummary({ refreshKey }) {
   }, [refreshKey]);
 
   return (
-    <div className="mt-4">
-      <h5>Today's Summary</h5>
-      <p>🚶 Steps: {summary.steps}</p>
-      <p>💧 Water Intake: {summary.water} ml</p>
+    <div className="card p-4 shadow-sm bg-light">
+      <h5 className="mb-3">Today's Summary</h5>
+      <p>Steps: <strong>{summary.steps}</strong></p>
+      <p>Water Intake: <strong>{summary.water} ml</strong></p>
     </div>
   );
+  
 }
 
 export default TodaySummary;
