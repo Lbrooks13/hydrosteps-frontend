@@ -91,6 +91,23 @@ The initial planning phase included wireframes to guide the layout and user expe
 - **Git & GitHub** – version control and deployment
 - **Visual Studio Code** – development environment
 
+## Deployment
+
+This project will be deployed using [Heroku](https://heroku.com).
+
+### 🔗 Live Links
+
+- Frontend (React): [Live Frontend App]()
+- Backend (Django API): [Live API Endpoint]()
+
+
+---
+
+### 🔧 Deployment Steps (Backend)
+
+1. Ensure all `requirements.txt` dependencies are up to date:
+   ```bash
+   pip freeze > requirements.txt
 
 
 

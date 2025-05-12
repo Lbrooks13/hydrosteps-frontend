@@ -8,7 +8,7 @@ function EntryForm({ onEntryAdded }) {
     e.preventDefault();
     const token = localStorage.getItem('token');
 
-    const response = await fetch('http://localhost:8000/api/entries/', {
+    const response = await fetch('https://hydrosteps-backend.herokuapp.com/api/entries/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
