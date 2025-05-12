@@ -62,6 +62,34 @@ As a user, I want to:
   - `TodaySummary` – Shows today’s totals
 - **HistoryPage** – Displays list of all past entries
 
+## Wireframes
+
+The initial planning phase included wireframes to guide the layout and user experience for each screen. These included:
+
+- A login and registration form
+- A dashboard for tracking water and steps
+- A visual summary of progress
+
+![Wireframes](https://i.ibb.co/21KZ7xqM/Hydro-Steps-Wireframe.png)
+
+## Technologies Used
+
+### Frontend
+- **React.js** – frontend framework
+- **React Router** – for navigation and protected routes
+- **Bootstrap 5** – for responsive layout and styling
+- **Recharts** – for charting activity history
+
+### Backend
+- **Django** – web framework for backend logic
+- **Django REST Framework** – API and authentication
+- **SimpleJWT** – token-based authentication
+- **CORS Headers** – to allow secure cross-origin requests
+
+### Tools
+- **GitHub Projects** – for Agile-style task tracking
+- **Git & GitHub** – version control and deployment
+- **Visual Studio Code** – development environment
 
 
 
