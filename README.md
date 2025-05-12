@@ -1,26 +1,54 @@
+# HydroSteps
+
+HydroSteps is a mobile-friendly productivity tracker that helps users stay healthy by logging their **daily step count** and **water intake**. Users can:
+
+- Register and log in securely
+- Set personalized daily goals
+- Track and view their progress in real-time
+- See summaries and visual history charts of their activity
+
+## User Stories
+
+As a user, I want to:
+-  Register for an account so I can track my personal progress
+-  Log in securely and access my dashboard
+-  Record how many steps I've walked and how much water I’ve consumed each day
+-  View a summary of today’s total steps and water
+-  Set daily targets for steps and water intake to stay on track
+-  See how well I’m doing compared to my daily targets
+-  View a history of my previous entries
+-  See a chart that helps me understand trends over time
+-  Log out securely when I’m finished
+
 ## Features
 
-### ✅ Authentication Features
-- User can **register** with email and password
-- User can **log in** to access their dashboard
-- User can **log out** securely
+###  Authentication
+- Register and log in with a secure password
+- Protected routes using token-based authentication
+- Session persists while user is logged in
 
-### ✅ Data Entry Features
-- User can manually enter:
-  - Daily step count
-  - Daily water intake (in ml)
-- Form includes input validation
-- Submitted data is saved to the backend via API
+###  Entry Tracking
+- Users can manually add their daily step count and water intake
+- Each entry is tied to the logged-in user
 
-### ✅ Dashboard Features
-- Displays total steps and water intake for today
-- Includes friendly goal reminder (e.g., “Drink 2L” or “10,000 steps”)
+###  Target Setting
+- Users can set personalized daily targets
+- Summary compares actual vs. target for the current day
 
-### ✅ History Page Features
-- Shows past entries (date, steps, water)
-- Optionally displays simple charts for visual tracking
+###  History & Data Visualization
+- Entries are displayed as a bar chart using Recharts
+- Helps visualize activity trends over time
 
----
+###  Responsive UI
+- Clean, card-based layout using Bootstrap
+- Works on desktop, tablet, and mobile screens
+
+###  Route Protection
+- Only authenticated users can access `/dashboard` and `/history`
+- Unauthenticated users are redirected to login
+
+###  Navigation
+- Navbar adapts to login state: shows “Dashboard” and “Logout” only when logged in
 
 ## React Component Structure
 
