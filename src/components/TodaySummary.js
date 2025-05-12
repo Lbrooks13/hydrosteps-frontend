@@ -6,7 +6,7 @@ function TodaySummary({ refreshKey }) {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    fetch('https://hydrosteps-backend.herokuapp.com/api/entries/', {
+    fetch('https://hydrosteps-backend-c9c9ddb6aa93.herokuapp.com/api/entries/', {
       method: 'GET',
       headers: {
         Authorization: `Token ${token}`,

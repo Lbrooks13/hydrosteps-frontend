@@ -11,7 +11,7 @@ function LoginPage() {
     e.preventDefault();
     setError('');
 
-    const response = await fetch('https://hydrosteps-backend.herokuapp.com/api/token/', {
+    const response = await fetch('https://hydrosteps-backend-c9c9ddb6aa93.herokuapp.com/api/entries/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),

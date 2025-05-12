@@ -17,7 +17,7 @@ function RegisterPage() {
       return;
     }
 
-    const response = await fetch('https://hydrosteps-backend.herokuapp.com/api/register/', {
+    const response = await fetch('https://hydrosteps-backend-c9c9ddb6aa93.herokuapp.com/api/entries/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password: password1 }),
