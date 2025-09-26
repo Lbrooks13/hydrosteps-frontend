@@ -9,27 +9,28 @@ function RegisterPage() {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    e.preventDefault();
-    setError('');
+  e.preventDefault();
+  setError('');
 
-    if (password1 !== password2) {
-      setError("Passwords do not match.");
-      return;
-    }
+  if (password1 !== password2) {
+    setError("Passwords do not match.");
+    return;
+  }
 
-    const response = await fetch('https://hydrosteps-backend-c9c9ddb6aa93.herokuapp.com/api/entries/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password: password1 }),
-    });
+  const response = await fetch('https://hydrosteps-backend-c9c9ddb6aa93.herokuapp.com/api/register/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password: password1 }),
+  });
 
-    if (response.ok) {
-      navigate('/');
-    } else {
-      const data = await response.json();
-      setError(data?.error || 'Registration failed.');
-    }
-  };
+  if (response.status === 201) {
+    navigate('/');
+  } else {
+    const data = await response.json();
+    setError(data?.error || 'Registration failed.');
+  }
+};
+
 
   return (
     <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light">

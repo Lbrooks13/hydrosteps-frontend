@@ -11,15 +11,18 @@ function LoginPage() {
     e.preventDefault();
     setError('');
 
-    const response = await fetch('https://hydrosteps-backend-c9c9ddb6aa93.herokuapp.com/api/entries/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
+    const API_URL = process.env.REACT_APP_API_URL;
+
+const response = await fetch(`${API_URL}/api/token/`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username, password }),
+});
+
 
     if (response.ok) {
       const data = await response.json();
-      localStorage.setItem('token', data.token);
+      localStorage.setItem('token', data.access);
       navigate('/dashboard');
     } else {
       setError('Invalid username or password');
